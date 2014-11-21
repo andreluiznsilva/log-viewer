@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<context-param>
+		<param-name>directory</param-name>
+		<param-value>logs</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>FileServlet</servlet-name>
+		<servlet-class>andreluiznsilva.tools.logviewer.FileServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileServlet</servlet-name>
+		<url-pattern>/log/list</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AtmosphereServlet</servlet-name>
+		<servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+		<init-param>
+			<param-name>org.atmosphere.cpr.packages</param-name>
+			<param-value>andreluiznsilva.tools.logviewer</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AtmosphereServlet</servlet-name>
+		<url-pattern>/log/change</url-pattern>
+		<url-pattern>/log/change/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>
