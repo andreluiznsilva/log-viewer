@@ -2,6 +2,11 @@ apply plugin: 'war'
 apply plugin: 'jetty'
 apply plugin: 'eclipse-wtp'
 
+repositories {   
+    mavenLocal()
+    mavenCentral()
+}
+
 dependencies {
     providedCompile 'javax:javaee-api:7.0'
     compile 'org.atmosphere:atmosphere-runtime-native:2.1.7'
