@@ -62,7 +62,7 @@ $(document).ready(function() {
 		terminal.write(messages);
 	});
 
-	$.get('/log/list', function(files) {
+	$.get('log/list', function(files) {
 		selector.find('option').remove();
 		$.each(files, function(key, value) {
 			$('<option>').val(value).text(value).appendTo(selector);
