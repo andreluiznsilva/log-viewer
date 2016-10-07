@@ -1,6 +1,0 @@
-rootProject.name = 'main'
-include ':impl:log-viewer'
-include ':impl'
-
-project(':impl:log-viewer').projectDir = "$rootDir/impl/log-viewer" as File
-project(':impl').projectDir = "$rootDir/impl" as File
